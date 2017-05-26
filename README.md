@@ -3,20 +3,28 @@
 A ROS wrapper for the PulsON P440 and P410 ultra-wideband radios from Time Domain. 
 
 Node: publishes range information to ROS framework
+
 Beacon: will be asked for range information by the node (can be not connected to the system)
 
 IMPORTANT: Remember to update the path at line 164 of 'src/P4xx/RangeNET/TDMA/rcmIf.c' to the corresponding serial port (usually '/dev/ttyACM0')
 
 Steps to work with a beacon and a node:
-1) Build a slotmap in the 'config' folder (use 'motion_tests.yaml' as a reference).
-2) Plug in both the beacon and the node and run 
+1) Build a slotmap in the 'config' folder (use `motion_tests.yaml` as a reference).
+2) Plug in both the beacon and the node and run
+
 `roslaunch receiver_beacon_reset.launch receiver_number:=<receiver_no> receiver_path:=/path/to/receiver beacon_number:=<beacon_no> beacon_path:=/path/to/beacon` 
+
 with the proper ID numbers (shown in the module labels) and port numbers to reset the devices.
 3) Run 
-`roslaunch receiver_beacon_beacon.launch beacon_number:=<beacon_no> beacon_path:=/path/to/beacon slot_map_file_name:=<slotmap name>` 
+
+`roslaunch receiver_beacon_beacon.launch beacon_number:=<beacon_no> beacon_path:=/path/to/beacon slot_map_file_name:=<slotmap name>`
+
 to setup the beacon.
 3) After you configure the beacon it is safe to unplug it.
-4) Run `roslaunch receiver_beacon_launch.launch receiver_number:=<receiver_no> receiver_path:=/path/to/receiver slot_map_file_name:=<slotmap name> robot:=<name>`
+4) Run 
+
+`roslaunch receiver_beacon_launch.launch receiver_number:=<receiver_no> receiver_path:=/path/to/receiver slot_map_file_name:=<slotmap name> robot:=<name>`
+
 to start the communication.
 5) Leave the node running and look at range information from the corresponding topic `<robot>/ranges/ranges`.
 
