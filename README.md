@@ -33,7 +33,7 @@ to start the communication.
 
 6) Leave the node running and look at range information from the corresponding topic `<robot>/ranges/ranges`.
 
-Note: A similar procedure is followed for launching one node talking to two beacons. You need to have a single slotmap file (see motivation_dynamics.yaml as an example). Remember that the two communications should be on a different slot and on a different channel.
+Note: A similar procedure is followed for launching one node talking to two beacons. You need to have a single slotmap file (see motivation_dynamics.yaml as an example). Remember that the two communications should be on a different slot.
 
 Interfacing with MATLAB 2016b:
 1) You will need support for custom messages. In a MATLAB window, run `roboticsAddons`.
