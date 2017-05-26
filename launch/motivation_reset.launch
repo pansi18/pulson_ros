@@ -1,0 +1,29 @@
+<launch>
+
+    <arg name="receiver_path" default="/dev/ttyACM1" />
+    <arg name="beacon_path_1" default="/dev/ttyACM2" />
+    <arg name="beacon_path_2" default="/dev/ttyACM3" />
+    <arg name="receiver_number" default="101" />
+    <arg name="beacon_number_1" default="102" />
+    <arg name="beacon_number_2" default="103" />
+    <arg name="pulse_integration_index" default="7" />
+
+    <node pkg="pulson_ros" name="reset_receiver" type="reset" output="screen">
+        <param name="pulse_integration_index" value="$(arg pulse_integration_index)" />
+        <param name="node_id" value="$(arg receiver_number)" />
+        <param name="dev_path" value="$(arg receiver_path)" />
+    </node>
+
+    <node pkg="pulson_ros" name="reset_beacon_1" type="reset" output="screen"> 
+        <param name="pulse_integration_index" value="$(arg pulse_integration_index)" />
+        <param name="node_id" value="$(arg beacon_number_1)" />
+        <param name="dev_path" value="$(arg beacon_path_1)" />
+    </node>
+
+    <node pkg="pulson_ros" name="reset_beacon_2" type="reset" output="screen"> 
+        <param name="pulse_integration_index" value="$(arg pulse_integration_index)" />
+        <param name="node_id" value="$(arg beacon_number_2)" />
+        <param name="dev_path" value="$(arg beacon_path_2)" />
+    </node>
+
+</launch>

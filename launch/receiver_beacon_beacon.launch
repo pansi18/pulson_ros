@@ -1,9 +1,6 @@
 <launch>
 
-    <arg name="robot" default="rositaur" />
-    <arg name="receiver_path" default="/dev/ttyACM1" />
     <arg name="beacon_path" default="/dev/ttyACM2" />
-    <arg name="receiver_number" default="103" />
     <arg name="beacon_number" default="104" />
     <arg name="pulse_integration_index" default="7" />
     <arg name="slot_map_file_name" default="receiver_beacon.yaml" />

@@ -2,9 +2,9 @@
 
     <arg name="robot" default="rositaur" />
     <arg name="receiver_path" default="/dev/ttyACM1" />
-    <arg name="receiver_number" default="103" />
+    <arg name="receiver_number" default="101" />
     <arg name="pulse_integration_index" default="7" />
-    <arg name="slot_map_file_name" default="receiver_beacon.yaml" />
+    <arg name="slot_map_file_name" default="motivation_dynamics.yaml" />
 
     <node pkg="pulson_ros" name="ranges" type="tdma_node" output="screen" ns="$(arg robot)">
         <param name="pulse_integration_index" value="$(arg pulse_integration_index)" />
