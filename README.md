@@ -8,7 +8,7 @@ Beacon: will be asked for range information by the node (can be not connected to
 
 IMPORTANT: Remember to update the path at line 164 of 'src/P4xx/RangeNET/TDMA/rcmIf.c' to the corresponding serial port (usually '/dev/ttyACM0')
 
-Steps to work with a beacon and a node:
+Steps to work with a beacon and a node (receiver):
 1) Build a slotmap in the 'config' folder (use `motion_tests.yaml` as a reference).
 
 2) Plug in both the beacon and the node and run
@@ -41,7 +41,7 @@ Interfacing with MATLAB 2016b:
 3) Click "Install", select "Install" and wait for the installation to complete.
 4) Now you need to generate the custom message. Create a folder somewhere (e.g in the Documents).
 5) Copy the whole package (with the name `pulson_ros`) in the created folder.
-6) In MATLAB, type `userFolder = '/path/to/folder/you/created/'`.
+6) In MATLAB, type `userFolder = '/path/to/folder/you/created/'` (NOT the package itself).
 7) Run `rosgenmsg(userFolder)` to create the custom messages.
 8) Follow the MATLAB instructions: a) Edit `javaclasspath.txt` by adding the line `/path/to/folder/you/created/matlab_gen/jar/pulson_ros-0.0.0.jar`, b) Execute `addpath('/path/to/folder/you/created/matlab_gen/msggen')`, c) Run `savepath`.
 9) Restart MATLAB and check that everything works by running `rosmsg list`.
